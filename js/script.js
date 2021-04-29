@@ -2,17 +2,23 @@
 // ma per i multipli di 3 stampi "Fizz" al posto del numero e per i multipli di 5 stampi Buzz.
 // Per i numeri che sono sia multipli di 3 che di 5 stampi FizzBuzz.
 
-
-
-
+var listNumber = [];
 for(var i=1; i <= 100; i++){ 
-    if(( i%3 == 0 ) && ( i%5 == 0)){
-        console.log( "FizzBuzz");
+    if(( (i%3) == 0 ) && ( (i%5) == 0)){
+        listNumber.push("<strong>" +"Fizz"+ "</strong>"+"<span>" +"Buzz"+ "</span>");
     }else if ( i%3 == 0 ){
-        console.log( "Fizz");
+        listNumber.push("<strong>" +"Fizz"+ "</strong>");
     }else if( i%5 == 0){
-        console.log( "Buzz");;
+        listNumber.push("<span>" +"Buzz"+ "</span>");
     }else{ 
-     console.log(i);   
+        listNumber.push(i);
     } 
 }
+
+var elemento = document.getElementById("list");
+
+for(i=0; i< 100; i++) {
+    elemento.innerHTML +=  "<li>" + listNumber[i] + "</li>";   
+}
+
+
